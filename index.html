@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Prasetyo ❤️ Sundari</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+      background: url('batik.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      font-size: 2em;
+      padding: 2em;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: left 1s ease-in-out;
+    }
+    .active {
+      left: 0 !important;
+    }
+    audio {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide active" id="slide1">
+    <div>
+      <h1>Undangan Pernikahan</h1>
+      <p>Prasetyo ❤️ Sundari</p>
+      <p>Dengan kasih dan anugerah Tuhan, kami mengundang Anda hadir dalam hari bahagia kami.</p>
+    </div>
+  </div>
+  <div class="slide" id="slide2">
+    <div>
+      <p>Rabu, 25 Juni 2025</p>
+      <p>Pukul 09.00 – 11.00 WIB</p>
+      <p>GKJ Sumberejo</p>
+    </div>
+  </div>
+  <div class="slide" id="slide3">
+    <div>
+      <p>Merupakan sukacita bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberi doa restu.</p>
+      <p>Tuhan memberkati.</p>
+    </div>
+  </div>
+  <audio autoplay loop>
+    <source src="musik.mp3" type="audio/mpeg" />
+    Browser Anda tidak mendukung audio.
+  </audio>
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 7000);
+  </script>
+</body>
+</html>
